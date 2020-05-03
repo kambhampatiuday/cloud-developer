@@ -42,8 +42,7 @@ import { Request, Response } from 'express';
     res.send("try GET /filteredimage?image_url={{}}")
   });
 
-  // filteredimage - End Point 
-  //validationrule - To make sure URL point is not empty string
+  // filteredimage - End Point and validationrule - To make sure URL point is not empty string
   app.get("/filteredimage",
     check('image_url').isURL()
     , async (req : Request,  res : Response) => {
