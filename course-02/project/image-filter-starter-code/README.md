@@ -17,6 +17,16 @@ You'll need to create a new node server. Open a new terminal within the project 
 1. Initialize a new project: `npm i`
 2. run the development server with `npm run dev`
 
+### Elastic BeanStalk End Point
+
+http://uday-instagram-dev.us-east-1.elasticbeanstalk.com/filteredimage
+
+### Sample 
+http://uday-instagram-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://i.dailymail.co.uk/1s/2019/11/23/09/21370544-7717313-image-a-1_1574501083030.jpg
+
+
+
+
 ### Create a new endpoint in the server.ts file
 
 The starter code has a task for you to complete an endpoint in `./src/server.ts` which uses query parameter to download an image from a public URL, filter the image, and return the result.
