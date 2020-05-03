@@ -2,6 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { filterImageFromURL, deleteLocalFiles } from './util/util';
 import { promises } from 'dns';
+import { Request, Response } from 'express';
+
 
 (async () => {
 
@@ -36,7 +38,7 @@ import { promises } from 'dns';
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get("/", async (req, res) => {
+  app.get("/", async (req, res ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   });
 
@@ -44,7 +46,7 @@ import { promises } from 'dns';
   //validationrule - To make sure URL point is not empty string
   app.get("/filteredimage",
     check('image_url').isURL()
-    , async (req, res) => {
+    , async (req : Request,  res : Response) => {
       // take input parameter
       const errors = validationResult(req);
       const urlparam = req.query.image_url;
