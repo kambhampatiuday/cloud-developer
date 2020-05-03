@@ -18,14 +18,27 @@ router.get('/', async (req: Request, res: Response) => {
 
 //@TODO
 //Add an endpoint to GET a specific resource by Primary Key
+// Get all feed items
+router.get( "/:id", async ( req: Request, res: Response ) => {
+    // destruct our path params
+    const { pid } = req.params;
+    const items = await FeedItem.findAll({where :{id :[4]}});
+     res.send(items);
+    } );
+  
 
 // update a specific resource
 router.patch('/:id', 
     requireAuth, 
     async (req: Request, res: Response) => {
         //@TODO try it yourself
-        res.send(500).send("not implemented")
+        // destruct our path params
+        const { pid } = req.params;
+        const  items = await FeedItem.update( {url :["uday.jpg"]}, {where :{id :[4]}});
+        
 });
+
+
 
 
 // Get a signed url to put a new item in the bucket
